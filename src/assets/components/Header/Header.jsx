@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Links } from "../../constants";
 
 function Header() {
@@ -12,13 +13,13 @@ function Header() {
         </a>
         <div className="invisible md:visible flex gap-10 items-center">
           {Links.map((item) => (
-            <a
+            <Link
               className="Header-font text-white Header-font-hover"
               key={item.linkName}
-              href={item.src}
+              to={item.src}
             >
               {item.linkName}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -10,7 +10,9 @@
 .container {
   @apply w-[80%];
 }
-
+/* * {
+  @apply border border-white;
+} */
 //Navbar
 .Header-font {
   @apply font-[Karla] font-normal text-xl text-white;

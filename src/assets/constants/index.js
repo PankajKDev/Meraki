@@ -5,7 +5,7 @@ export const Links = [
   },
   {
     linkName: "Pomodoro",
-    src: "/",
+    src: "/pomodoro",
   },
   {
     linkName: "Dashboard",
@@ -13,20 +13,17 @@ export const Links = [
   },
 ];
 
-export const sectionData = [
+export const SiteMap = [
   {
-    id: 3,
-    Heading: "82% adults lack effective system for Time Management",
-    SubHeading:
-      "This can be solved with better time organization and a better plan",
-    Image: "/homeImages/reflecting.png",
+    linkName: "Github",
+    src: "/",
   },
   {
-    id: 4,
-    Heading: "We are here to help",
-    SubHeading: "Meraki is a Productivity tool to help you organize and focus",
-    Image: "/homeImages/growth.png",
-    ImageOrder: "order-2",
-    TextOrder: "order-1",
+    linkName: "LinkedIn",
+    src: "/",
+  },
+  {
+    linkName: "Email",
+    src: "/",
   },
 ];
