@@ -37,7 +37,7 @@ function Header() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component="h6"
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
@@ -130,7 +130,7 @@ function Header() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
+            component="h6"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -186,15 +186,15 @@ function Header() {
               ))}
             </SignedOut>
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <SignedIn>
+          <SignedIn>
+            <Box sx={{ flexGrow: 0, backgroundColor: "black" }}>
               <Tooltip title="User">
-                <IconButton sx={{ p: 0 }}>
+                <IconButton sx={{ backgroundColor: "black" }}>
                   <UserButton />
                 </IconButton>
               </Tooltip>
-            </SignedIn>
-          </Box>
+            </Box>
+          </SignedIn>
         </Toolbar>
       </Container>
     </AppBar>

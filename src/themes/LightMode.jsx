@@ -4,7 +4,7 @@ const LightMode = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "#f5f5f5", // A softer white for the default background
+      default: "#000000", // A softer white for the default background
       paper: "#ffffff", // Paper background for cards
       bgx: "#000000",
     },
