@@ -6,6 +6,9 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router";
 import CreateAccount from "./pages/Auth/CreateAccount";
 import LoginAccount from "./pages/Auth/LoginAccount";
+import Pomodoro from "./pages/Pomodoro";
+import RequireAuth from "./assets/Hooks/RequireAuth";
+
 function App() {
   return (
     <>
@@ -15,6 +18,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<CreateAccount />} />
           <Route path="/sign-up" element={<LoginAccount />} />
+          <Route
+            path="/pomodoro"
+            element={
+              <RequireAuth>
+                <Pomodoro />
+              </RequireAuth>
+            }
+          />
         </Routes>
       </ThemeProvider>
     </>

@@ -3,11 +3,6 @@ import LightMode from "./LightMode"; // Adjust the path as needed
 
 const clerkTheme = {
   elements: {
-    // General background settings
-    rootBox: {
-      backgroundColor: LightMode.palette.background.default, // Matches the default background
-      color: LightMode.palette.text.primary, // Primary text color
-    },
     card: {
       backgroundColor: LightMode.palette.background.paper, // Card background
       boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Subtle shadow for cards

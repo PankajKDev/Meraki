@@ -9,7 +9,6 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { useTheme } from "@mui/material";
 import { AuthButtons, Links } from "../../constants";
 import { NavLink } from "react-router";
 import { useState } from "react";
@@ -17,7 +16,6 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(false);
 
-  const theme = useTheme();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -29,7 +27,7 @@ function Header() {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: theme.palette.background.bgx,
+        backgroundColor: "black",
       }}
     >
       <Container maxWidth="xl">
@@ -38,7 +36,6 @@ function Header() {
             variant="h6"
             noWrap
             component="h6"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -187,9 +184,9 @@ function Header() {
             </SignedOut>
           </Box>
           <SignedIn>
-            <Box sx={{ flexGrow: 0, backgroundColor: "black" }}>
+            <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="User">
-                <IconButton sx={{ backgroundColor: "black" }}>
+                <IconButton>
                   <UserButton />
                 </IconButton>
               </Tooltip>

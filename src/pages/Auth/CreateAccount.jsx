@@ -11,7 +11,7 @@ function CreateAccount() {
         height: "90vh",
       }}
     >
-      <SignUp />
+      <SignUp forceRedirectUrl="/" />
     </Container>
   );
 }

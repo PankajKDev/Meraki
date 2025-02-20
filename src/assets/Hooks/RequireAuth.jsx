@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { Navigate } from "react-router";
 
 const RequireAuth = ({ children }) => {
-  const { isSigned } = useAuth();
-  if (!isSigned) {
+  const { isSignedIn } = useAuth();
+  if (!isSignedIn) {
     return <Navigate to="/sign-in" />;
   }
   return children;
