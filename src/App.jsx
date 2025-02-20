@@ -7,12 +7,14 @@ import { Route, Routes } from "react-router";
 import CreateAccount from "./pages/Auth/CreateAccount";
 import LoginAccount from "./pages/Auth/LoginAccount";
 import Pomodoro from "./pages/Pomodoro";
-import RequireAuth from "./assets/Hooks/RequireAuth";
+import RequireAuth from "./assets/utils/RequireAuth";
+import UserSync from "./assets/utils/UserSync";
 
 function App() {
   return (
     <>
       <ThemeProvider theme={LightMode}>
+        <UserSync />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
