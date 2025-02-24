@@ -13,6 +13,7 @@ function UserSync() {
         email: user.primaryEmailAddress?.emailAddress,
         firstName: user.firstName,
         lastName: user.lastName,
+        pomodoro: 0,
         createdAt: new Date(),
       };
       async function addUser() {
