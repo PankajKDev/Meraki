@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 import { db } from "../../../libs/firebase";
 import { doc, increment, updateDoc } from "firebase/firestore";
+import { PomodoroModeButtons } from "../../constants";
 
 const MODES = {
   FOCUS: "Focus",
@@ -75,48 +76,23 @@ function PomodoroTimer() {
           justifyContent: "center",
         }}
       >
-        <Button
-          onClick={() => setMode("Focus")}
-          sx={{
-            background: "black",
-            color: "white",
-            border: "1px solid black",
-            ":hover": {
-              backgroundColor: "white",
-              color: "black",
-            },
-          }}
-        >
-          Focus
-        </Button>
-        <Button
-          onClick={() => setMode("Short")}
-          sx={{
-            background: "black",
-            color: "white",
-            border: "1px solid black",
-            ":hover": {
-              backgroundColor: "white",
-              color: "black",
-            },
-          }}
-        >
-          Short Timer
-        </Button>
-        <Button
-          onClick={() => setMode("Long")}
-          sx={{
-            background: "black",
-            color: "white",
-            border: "1px solid black",
-            ":hover": {
-              backgroundColor: "white",
-              color: "black",
-            },
-          }}
-        >
-          Long Timer
-        </Button>
+        {PomodoroModeButtons.map((item) => (
+          <Button
+            key={item.id}
+            onClick={() => setMode(item.modName)}
+            sx={{
+              background: "black",
+              color: "white",
+              border: "1px solid black",
+              ":hover": {
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
+          >
+            {item.name}
+          </Button>
+        ))}
       </Box>
 
       <Typography

@@ -94,3 +94,33 @@ export const HeroContent = [
     orderText: 1,
   },
 ];
+
+export const CATEGORIES = [
+  { value: "frog", label: "Frog: Single Important task of the day" },
+  { value: "bee", label: "Bee Task: Important tasks" },
+  { value: "fly", label: "Fly Task: Basic tasks" },
+];
+
+export const LABELS = [
+  { value: "personal", label: "Personal" },
+  { value: "work", label: "Work" },
+  { value: "shopping", label: "Shopping" },
+];
+
+export const PomodoroModeButtons = [
+  {
+    id: 1,
+    name: "Focus",
+    modName: "Focus",
+  },
+  {
+    id: 2,
+    name: "Short Break",
+    modName: "Short",
+  },
+  {
+    id: 3,
+    name: "Long Break",
+    modName: "Long",
+  },
+];

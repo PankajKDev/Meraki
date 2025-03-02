@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -15,8 +15,9 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.4",
-    "@mui/joy": "^5.0.0-beta.51",
     "@mui/material": "^6.4.4",
+    "@mui/x-date-pickers": "^7.27.1",
+    "dayjs": "^1.11.13",
     "firebase": "^11.3.1",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",

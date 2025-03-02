@@ -1,5 +1,5 @@
 import { Close } from "@mui/icons-material";
-import { Box, IconButton, List, ListItem, Typography } from "@mui/material";
+import { Box, IconButton, List, Typography } from "@mui/material";
 import TextInput from "./TextInput";
 import PropTypes from "prop-types";
 import usePomodoroStore from "../../../store/usePomodoroStore";
@@ -54,7 +54,6 @@ export default function DrawerList({ toggleDrawer }) {
           onChangeValue={changeLongBreak}
           label="Long Break"
         />
-        <ListItem></ListItem>
       </List>
     </Box>
   );

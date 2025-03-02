@@ -9,6 +9,7 @@ import LoginAccount from "./pages/Auth/LoginAccount";
 import Pomodoro from "./pages/Pomodoro";
 import RequireAuth from "./assets/utils/RequireAuth";
 import UserSync from "./assets/utils/UserSync";
+import Tasks from "./pages/Tasks";
 
 function App() {
   return (
@@ -25,6 +26,14 @@ function App() {
             element={
               <RequireAuth>
                 <Pomodoro />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/tasks"
+            element={
+              <RequireAuth>
+                <Tasks />
               </RequireAuth>
             }
           />
