@@ -113,7 +113,7 @@ function InputTask({ handleOpen, open, theme }) {
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     sx={{ width: "50%" }}
-                    onChange={(e) => changeDate(dayjs(e.target.value))}
+                    onChange={(newValue) => changeDate(newValue)}
                     value={TaskDate}
                     inputFormat="DD-MM-YYYY"
                     minDate={dayjs(new Date())}

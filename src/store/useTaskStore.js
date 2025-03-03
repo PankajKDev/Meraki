@@ -9,7 +9,8 @@ const useTaskStore = create((set) => ({
   errors: {},
   changeTaskName: (value) => set(() => ({ TodoName: value })),
   changeCategory: (value) => set(() => ({ Category: value })),
-  changeDate: (value) => set(() => ({ TaskDate: dayjs(value) })),
+  changeDate: (value) =>
+    set(() => ({ TaskDate: value ? value : dayjs(value) })),
   changeLabel: (value) => set(() => ({ Label: value })),
   changeNote: (value) => set(() => ({ Note: value })),
   validate: () => {

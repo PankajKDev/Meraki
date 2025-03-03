@@ -10,9 +10,19 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import useTodoRead from "../../utils/useTodoRead";
+import dayjs from "dayjs";
 
 function LabelMapper({ AccordionName }) {
-  const { data } = useTodoRead();
+  function DateFilter(date) {
+    const status = dayjs(date.tdate.toDate()).isSame(dayjs(), "day");
+    if (AccordionName === "Today") {
+      return status;
+    } else if (AccordionName === "Later") {
+      return !status;
+    }
+  }
+  const { data, todoDeleter } = useTodoRead();
+  const filteredTasks = data.filter(DateFilter);
   return (
     <Accordion
       elevation={0}
@@ -36,12 +46,7 @@ function LabelMapper({ AccordionName }) {
         >
           <Chip
             size="small"
-            label="2 completed"
-            sx={{ mr: 1, backgroundColor: "#d3f9d8", color: "#2b8a3e" }}
-          />
-          <Chip
-            size="small"
-            label="3 pending"
+            label={`${filteredTasks.length} pending tasks`}
             sx={{ backgroundColor: "#fff3bf", color: "#e67700" }}
           />
         </Box>
@@ -63,7 +68,7 @@ function LabelMapper({ AccordionName }) {
         >
           {/* Task 1 */}
 
-          {data.map((item) => (
+          {filteredTasks.map((item) => (
             <Accordion
               key={item.id}
               elevation={1}
@@ -91,7 +96,9 @@ function LabelMapper({ AccordionName }) {
                     sx={{ display: "flex", alignItems: "center", gap: "15px" }}
                   >
                     <Checkbox
-                      value={item.completed}
+                      onChange={() => {
+                        todoDeleter(item.id);
+                      }}
                       sx={{
                         p: 0,
                         mr: 2,

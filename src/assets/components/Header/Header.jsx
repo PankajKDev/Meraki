@@ -85,7 +85,7 @@ function Header() {
               <SignedIn>
                 {Links.map((item) => (
                   <MenuItem key={item.linkName} onClick={handleCloseNavMenu}>
-                    <NavLink to={item.src}>
+                    <NavLink sx={{ textDecoration: "none" }} to={item.src}>
                       <Typography sx={{ textAlign: "center" }}>
                         {item.linkName}
                       </Typography>
@@ -113,8 +113,10 @@ function Header() {
               >
                 {AuthButtons.map((item) => (
                   <MenuItem key={item.id} onClick={handleCloseNavMenu}>
-                    <NavLink style={{ textDecoration: "none" }} to={item.src}>
-                      <Typography sx={{ textAlign: "center" }}>
+                    <NavLink sx={{ textDecoration: "none" }} to={item.src}>
+                      <Typography
+                        sx={{ textAlign: "center", textDecoration: "none" }}
+                      >
                         {item.name}
                       </Typography>
                     </NavLink>

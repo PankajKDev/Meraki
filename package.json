@@ -22,6 +22,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-helmet": "^6.1.0",
     "react-router": "^7.2.0",
     "react-timer-hook": "^3.0.8",
     "zustand": "^5.0.3"
