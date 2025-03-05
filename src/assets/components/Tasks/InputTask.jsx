@@ -20,24 +20,33 @@ import {
   TextAreaStyles,
   textFieldStyles,
 } from "../../constants/muiStyles";
-import { CATEGORIES, LABELS } from "../../constants";
+import { LABELS, PRIORITY_NAMES } from "../../constants";
 import TodoUpload from "../../utils/TodoUpload";
 import { Close } from "@mui/icons-material";
 import PropTypes from "prop-types";
 function InputTask({ handleOpen, open, theme }) {
   const {
     TodoName,
-    Category,
+    Priority,
     TaskDate,
     Label,
     Note,
     changeTaskName,
-    changeCategory,
+    changePriority,
     changeDate,
     changeLabel,
     changeNote,
     errors,
   } = useTaskStore();
+
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: "200px",
+        overflowY: "auto",
+      },
+    },
+  };
 
   return (
     <>
@@ -56,8 +65,9 @@ function InputTask({ handleOpen, open, theme }) {
             sx={{
               width: { xs: "90%", sm: "50%", md: "50%" },
               height: "fit-content",
-              paddingBottom: "20px",
               background: "white",
+              paddingBottom: "20px",
+              borderRadius: "10px",
             }}
           >
             <Box
@@ -67,9 +77,9 @@ function InputTask({ handleOpen, open, theme }) {
                 justifyContent: "space-between",
                 bgcolor: "black",
                 padding: "15px",
+                borderRadius: "10px 10px 0px 0px",
+                fontFamily: theme.typography.body1,
                 color: "white",
-
-                fontFamily: theme.typography.fontFamily,
               }}
             >
               Add Tasks
@@ -87,16 +97,16 @@ function InputTask({ handleOpen, open, theme }) {
                 sx={textFieldStyles}
               />
               <FormControl fullWidth sx={{ maxWidth: "80%" }}>
-                <InputLabel>Category</InputLabel>
+                <InputLabel>Priority</InputLabel>
                 <Select
-                  onChange={(e) => changeCategory(e.target.value)}
-                  value={Category}
-                  defaultValue="fly"
-                  name="category"
-                  label="Category"
+                  onChange={(e) => changePriority(e.target.value)}
+                  value={Priority}
+                  defaultValue="priority 1"
+                  name="Priority"
+                  label="Priority"
                   sx={selectStyles}
                 >
-                  {CATEGORIES.map((item) => (
+                  {PRIORITY_NAMES.map((item) => (
                     <MenuItem key={item.value} value={item.value}>
                       {item.label}
                     </MenuItem>
@@ -126,15 +136,11 @@ function InputTask({ handleOpen, open, theme }) {
                   <Select
                     value={Label}
                     defaultValue="work"
+                    MenuProps={MenuProps}
                     onChange={(e) => changeLabel(e.target.value)}
                     name="Labels"
                     label="Labels"
-                    sx={{
-                      "& .MuiSelect-icon": { color: "black" },
-                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "black",
-                      },
-                    }}
+                    sx={{ selectStyles }}
                   >
                     {LABELS.map((item) => (
                       <MenuItem key={item.value} value={item.value}>

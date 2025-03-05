@@ -7,7 +7,6 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
       maxWidth="md"
       sx={{
         display: "flex",
-        marginTop: "20px",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: {
@@ -49,7 +48,7 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
         }}
       >
         <Typography
-          variant="h2"
+          variant="h1"
           component="h1"
           sx={{
             fontSize: {
@@ -68,11 +67,14 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
           {heading}
         </Typography>
         <Typography
+          variant="body1"
           sx={{
             textAlign: {
               sm: "center",
               md: "left",
             },
+            fontSize: "15px",
+            fontWeight: "400",
           }}
         >
           {subHeading}

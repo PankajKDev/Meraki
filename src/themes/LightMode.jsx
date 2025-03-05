@@ -4,9 +4,9 @@ const LightMode = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "#f5f5f5", // A softer white for the default background
+      default: "#ffffff", // A softer white for the default background
       paper: "#ffffff", // Paper background for cards
-      bgx: "#000000",
+      darkbg: "#000000",
     },
     text: {
       primary: "#212121", // Darker text for better readability
@@ -19,22 +19,32 @@ const LightMode = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontWeightRegular: 400,
     fontWeightBold: 700,
+
     h1: {
+      fontFamily: "Bebas Neue",
       fontSize: "2rem",
+      letterSpacing: ".10rem",
       fontWeight: 700,
-      color: "#212121",
+      color: "#000000",
     },
     h2: {
+      fontFamily: "Roboto Slab",
       fontSize: "1.5rem",
       fontWeight: 600,
-      color: "#212121",
+      color: "#000000",
     },
     body1: {
       fontSize: "1rem",
-      color: "#212121",
+      color: "#000000",
+      fontFamily: "Noto Sans",
+    },
+    body2: {
+      fontFamily: "Roboto Slab",
+      fontSize: "1rem",
+      fontWeight: 200,
+      color: "#000000",
     },
   },
 });

@@ -34,7 +34,15 @@ export default function DrawerList({ toggleDrawer }) {
           }}
           component="div"
         >
-          <Typography variant="h2">Pomodoro settings</Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: "24px",
+              fontWeight: "500",
+            }}
+          >
+            Pomodoro settings
+          </Typography>
           <IconButton onClick={toggleDrawer(false)}>
             <Close sx={{ color: "black" }} />
           </IconButton>

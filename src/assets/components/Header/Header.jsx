@@ -15,7 +15,6 @@ import { useState } from "react";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(false);
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -27,23 +26,22 @@ function Header() {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "black",
+        backgroundColor: "#000000",
       }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="body1"
             noWrap
-            component="h6"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              fontSize: "20px",
             }}
           >
             <NavLink
@@ -86,7 +84,7 @@ function Header() {
                 {Links.map((item) => (
                   <MenuItem key={item.linkName} onClick={handleCloseNavMenu}>
                     <NavLink sx={{ textDecoration: "none" }} to={item.src}>
-                      <Typography sx={{ textAlign: "center" }}>
+                      <Typography variant="body2" sx={{ textAlign: "center" }}>
                         {item.linkName}
                       </Typography>
                     </NavLink>
@@ -115,6 +113,7 @@ function Header() {
                   <MenuItem key={item.id} onClick={handleCloseNavMenu}>
                     <NavLink sx={{ textDecoration: "none" }} to={item.src}>
                       <Typography
+                        variant="body2"
                         sx={{ textAlign: "center", textDecoration: "none" }}
                       >
                         {item.name}
@@ -127,14 +126,13 @@ function Header() {
           </Box>
 
           <Typography
-            variant="h5"
+            variant="body1"
             noWrap
             component="h6"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -142,7 +140,10 @@ function Header() {
             }}
           >
             <NavLink
-              style={{ color: "inherit", textDecoration: "none" }}
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+              }}
               to="/"
             >
               Meraki
@@ -162,7 +163,15 @@ function Header() {
                       textDecoration: "none",
                     }}
                   >
-                    {item.linkName}
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "white",
+                        fontSize: "14px",
+                      }}
+                    >
+                      {item.linkName}
+                    </Typography>
                   </NavLink>
                 </Button>
               ))}

@@ -1,5 +1,5 @@
-import { ControlPoint } from "@mui/icons-material";
-import { Paper, Typography, useTheme } from "@mui/material";
+import { Add, ControlPoint } from "@mui/icons-material";
+import { Box, Paper, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import InputTask from "./InputTask";
 function TaskCreator() {
@@ -35,9 +35,32 @@ function TaskCreator() {
             marginLeft: "10px",
           }}
         />
-        <Typography>Add Task</Typography>
+        <Typography variant="body1">Add Task</Typography>
       </Paper>
       <InputTask handleOpen={handleOpen} open={open} theme={theme} />
+      <Paper
+        onClick={handleOpen}
+        elevation={5}
+        sx={{
+          position: "fixed",
+          bottom: {
+            xs: 40,
+            sm: 70,
+            md: 70,
+          },
+          right: 40,
+          width: "50px",
+          height: "50px",
+          borderRadius: "30px",
+          background: "black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+      >
+        <Add sx={{ color: "white" }} />
+      </Paper>
     </>
   );
 }

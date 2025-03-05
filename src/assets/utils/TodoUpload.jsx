@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 function TodoUpload({ handleOpen }) {
   const {
     TodoName,
-    Category,
+    Priority,
     TaskDate,
     Label,
     Note,
@@ -24,7 +24,7 @@ function TodoUpload({ handleOpen }) {
   const todoData = {
     user: user.id,
     tname: TodoName,
-    category: Category,
+    priority: Priority,
     tdate: Timestamp.fromDate(TaskDate.toDate()),
     label: Label,
     note: Note,

@@ -2,13 +2,13 @@ import { create } from "zustand";
 import dayjs from "dayjs";
 const useTaskStore = create((set) => ({
   TodoName: "",
-  Category: "fly",
+  Priority: "priority 1",
   TaskDate: dayjs(),
   Label: "work",
   Note: "",
   errors: {},
   changeTaskName: (value) => set(() => ({ TodoName: value })),
-  changeCategory: (value) => set(() => ({ Category: value })),
+  changePriority: (value) => set(() => ({ Priority: value })),
   changeDate: (value) =>
     set(() => ({ TaskDate: value ? value : dayjs(value) })),
   changeLabel: (value) => set(() => ({ Label: value })),

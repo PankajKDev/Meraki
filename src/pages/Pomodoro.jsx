@@ -1,7 +1,8 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import PomodoroTimer from "../assets/components/Pomodoro/PomodoroTimer";
-
+import HeroCard from "../assets/components/Home/HeroCard";
+import { PomodoroPageContent } from "../assets/constants";
 function Pomodoro() {
   return (
     <>
@@ -16,12 +17,24 @@ function Pomodoro() {
       >
         <Typography
           variant="h1"
-          sx={{ textAlign: "center", fontSize: "48px", marginTop: "40px" }}
+          sx={{
+            textAlign: "center",
+            fontSize: "32px",
+            marginTop: "40px",
+            fontWeight: "400",
+          }}
         >
-          Pomodoro
+          POMODORO
         </Typography>
 
         <PomodoroTimer />
+        <Box
+          sx={{
+            width: "100%",
+          }}
+        >
+          <HeroCard {...PomodoroPageContent} />
+        </Box>
       </Container>
     </>
   );

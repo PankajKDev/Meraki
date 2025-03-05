@@ -59,7 +59,6 @@ function PomodoroTimer() {
       await updateDoc(UserRef, {
         pomodoro: increment(1),
       });
-      console.log("Successfully added");
     } else {
       return null;
     }
@@ -96,10 +95,11 @@ function PomodoroTimer() {
       </Box>
 
       <Typography
+        variant="body1"
         sx={{
           marginTop: "10px",
-          fontSize: { xs: "60px", sm: "90px", md: "150px" },
-          fontWeight: "bolder",
+          fontSize: { xs: "64px", sm: "64px", md: "100px" },
+          fontWeight: "500",
         }}
         component="h1"
       >

@@ -14,6 +14,7 @@ function UserSync() {
         firstName: user.firstName,
         lastName: user.lastName,
         pomodoro: 0,
+        tasksCompleted: 0,
         createdAt: new Date(),
       };
       async function addUser() {

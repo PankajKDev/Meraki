@@ -95,16 +95,24 @@ export const HeroContent = [
   },
 ];
 
-export const CATEGORIES = [
-  { value: "frog", label: "Frog: Single Important task of the day" },
-  { value: "bee", label: "Bee Task: Important tasks" },
-  { value: "fly", label: "Fly Task: Basic tasks" },
+export const PRIORITY_NAMES = [
+  { value: "priority 1", label: "Priority 1: Urge and Important Tasks" },
+  {
+    value: "priority 2",
+    label: "Priority 2: Important  but Non-urgent Tasks",
+  },
+  { value: "priority 3", label: "Priority 3: Low priority tasks" },
 ];
 
 export const LABELS = [
   { value: "personal", label: "Personal" },
   { value: "work", label: "Work" },
   { value: "shopping", label: "Shopping" },
+  { value: "health", label: "Health" },
+  { value: "finance", label: "Finance" },
+  { value: "education", label: "Education" },
+  { value: "hobbies", label: "Hobbies" },
+  { value: "travel", label: "Travel" },
 ];
 
 export const PomodoroModeButtons = [
@@ -124,3 +132,12 @@ export const PomodoroModeButtons = [
     modName: "Long",
   },
 ];
+
+export const PomodoroPageContent = {
+  imgUrl: "/roboto.png",
+  heading: "Start Focusing With Pomodoro",
+  subHeading:
+    "Start the timer to start using Pomodoro Timer and remember to take breaks.",
+  orderImg: 2,
+  orderText: 1,
+};
