@@ -3,13 +3,14 @@ import { Box, Container, Typography } from "@mui/material";
 import PomodoroTimer from "../assets/components/Pomodoro/PomodoroTimer";
 import HeroCard from "../assets/components/Home/HeroCard";
 import { PomodoroPageContent } from "../assets/constants";
+
 function Pomodoro() {
   return (
     <>
       <Container
         maxWidth="lg"
         sx={{
-          height: "100dvh",
+          height: "100%",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",

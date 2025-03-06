@@ -96,7 +96,7 @@ export const HeroContent = [
 ];
 
 export const PRIORITY_NAMES = [
-  { value: "priority 1", label: "Priority 1: Urge and Important Tasks" },
+  { value: "priority 1", label: "Priority 1: Urgent and Important Tasks" },
   {
     value: "priority 2",
     label: "Priority 2: Important  but Non-urgent Tasks",

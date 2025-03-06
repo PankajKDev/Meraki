@@ -7,6 +7,7 @@ import {
   Checkbox,
   Chip,
   IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
@@ -70,7 +71,10 @@ function LabelMapper({ AccordionName }) {
           <Chip
             size="small"
             label={`${filteredTasks.length} pending tasks`}
-            sx={{ backgroundColor: "#fff3bf", color: "#e67700" }}
+            sx={{
+              backgroundColor: "#AEC6CF",
+              color: "#333333",
+            }}
           />
         </Box>
       </AccordionSummary>
@@ -94,15 +98,15 @@ function LabelMapper({ AccordionName }) {
           {filteredTasks.map((item) => (
             <Accordion
               key={item.id}
-              elevation={0}
+              elevation={2}
               sx={{
                 fontFamily: "sans-serif",
                 textShadow: "1px rgba(0, 0, 0, 0.5)",
                 width: "100%",
                 padding: "4px 12px",
-                borderRadius: "4px",
+                borderRadius: "12px",
                 display: "inline-block",
-                border: "1px solid black",
+                border: "1px solid #ddd",
               }}
             >
               <AccordionSummary expandIcon={<ExpandMore />}>
@@ -132,9 +136,11 @@ function LabelMapper({ AccordionName }) {
                       }}
                     />
                     <Typography
+                      variant="body1"
                       sx={{
                         fontFamily: "sans-serif",
-                        fontWeight: "600",
+                        fontWeight: "bold",
+                        fontSize: "0.8rem",
                       }}
                     >
                       {item.tname}
@@ -154,8 +160,8 @@ function LabelMapper({ AccordionName }) {
                       size="small"
                       label={item.label}
                       sx={{
-                        backgroundColor: "#FFFFFF",
-                        color: "#000000",
+                        backgroundColor: "#e0f7fa",
+                        color: "#00796b",
                         border: "1px solid black",
                       }}
                     />
@@ -168,9 +174,11 @@ function LabelMapper({ AccordionName }) {
                       }}
                     />
                   </Box>
-                  <IconButton onClick={() => deleteTodo(item.id)}>
-                    <Delete sx={{ fill: "#FF7043" }} />
-                  </IconButton>
+                  <Tooltip title="Delete Task">
+                    <IconButton onClick={() => deleteTodo(item.id)}>
+                      <Delete sx={{ fill: "#FF7043" }} />
+                    </IconButton>
+                  </Tooltip>
                 </Box>
               </AccordionSummary>
               <AccordionDetails>
@@ -188,8 +196,8 @@ function LabelMapper({ AccordionName }) {
                     size="small"
                     label={item.label}
                     sx={{
-                      backgroundColor: "#FFFFFF",
-                      color: "#000000",
+                      backgroundColor: "#e0f7fa",
+                      color: "#00796b",
                       border: "1px solid black",
                     }}
                   />
@@ -203,8 +211,8 @@ function LabelMapper({ AccordionName }) {
                   />
                 </Box>
                 <Typography
+                  variant="body2"
                   sx={{
-                    fontFamily: "monospace",
                     fontSize: "12px",
                     fontWeight: "bolder",
                     marginTop: "10px",
@@ -213,8 +221,8 @@ function LabelMapper({ AccordionName }) {
                   {dayjs(item.tdate.toDate()).format("DD MMM YYYY, hh:mm A")}
                 </Typography>
                 <Typography
+                  variant="body1"
                   sx={{
-                    fontFamily: "sans-serif",
                     marginTop: "12px",
                   }}
                 >

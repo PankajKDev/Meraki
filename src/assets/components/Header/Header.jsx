@@ -84,7 +84,7 @@ function Header() {
                 {Links.map((item) => (
                   <MenuItem key={item.linkName} onClick={handleCloseNavMenu}>
                     <NavLink sx={{ textDecoration: "none" }} to={item.src}>
-                      <Typography variant="body2" sx={{ textAlign: "center" }}>
+                      <Typography variant="body1" sx={{ textAlign: "center" }}>
                         {item.linkName}
                       </Typography>
                     </NavLink>

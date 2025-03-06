@@ -1,5 +1,5 @@
 import { Add, ControlPoint } from "@mui/icons-material";
-import { Box, Paper, Typography, useTheme } from "@mui/material";
+import { Paper, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import InputTask from "./InputTask";
 function TaskCreator() {
@@ -11,7 +11,7 @@ function TaskCreator() {
   return (
     <>
       <Paper
-        elevation={3}
+        elevation={5}
         onClick={handleOpen}
         sx={{
           width: "100%",
@@ -29,9 +29,9 @@ function TaskCreator() {
         <ControlPoint
           sx={{
             fill: "white",
-            background: "black",
+            background: "purple",
             borderRadius: "50px",
-            fontSize: "20px",
+            fontSize: "24px",
             marginLeft: "10px",
           }}
         />
@@ -52,14 +52,25 @@ function TaskCreator() {
           width: "50px",
           height: "50px",
           borderRadius: "30px",
-          background: "black",
+          background: "purple",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          color: "white",
           cursor: "pointer",
+          transition: (theme) =>
+            theme.transitions.create(["background-color", "transform"], {
+              duration: theme.transitions.duration.standard, // Default duration
+              easing: theme.transitions.easing.easeInOut, // Default easing
+            }),
+          ":hover": {
+            backgroundColor: "#AEC6CF",
+            transform: "scale(1.1)",
+            color: "#333333",
+          },
         }}
       >
-        <Add sx={{ color: "white" }} />
+        <Add />
       </Paper>
     </>
   );

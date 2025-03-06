@@ -12,16 +12,16 @@ function Tasks() {
 
   useEffect(() => {
     const currentHour = dayjs().hour();
-    let greetingText = "Hello!";
+    let greetingText = "Hello";
 
     if (currentHour >= 5 && currentHour < 12) {
-      greetingText = "Morning!";
+      greetingText = "Morning";
     } else if (currentHour >= 12 && currentHour < 18) {
-      greetingText = "Afternoon!";
+      greetingText = "Afternoon";
     } else if (currentHour >= 18 && currentHour <= 24) {
-      greetingText = "Evening!";
+      greetingText = "Evening";
     } else {
-      greetingText = "Night!";
+      greetingText = "Night";
     }
 
     setGreeting(greetingText);
@@ -45,7 +45,7 @@ function Tasks() {
         }}
       >
         <Typography
-          variant="body2"
+          variant="body1"
           sx={{
             textAlign: "center",
             fontSize: "48px",
@@ -53,7 +53,7 @@ function Tasks() {
             color: "#121212",
           }}
         >
-          {greeting} {user.fullName}
+          Good {greeting} {user.fullName}!
         </Typography>
         <TaskCreator />
         <LabelMapper AccordionName="Today" />

@@ -22,7 +22,7 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
         sx={{
           maxWidth: {
             xs: "100%",
-            sm: "100%",
+            sm: "50%",
             md: "50%",
           },
 
@@ -61,7 +61,7 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
               md: "wrap",
               lg: "nowrap",
             },
-            textAlign: "left",
+            textAlign: { xs: "center", sm: "center", md: "left" },
           }}
         >
           {heading}
@@ -70,6 +70,7 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
           variant="body1"
           sx={{
             textAlign: {
+              xs: "center",
               sm: "center",
               md: "left",
             },
