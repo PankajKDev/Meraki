@@ -46,3 +46,18 @@ export const TextAreaStyles = {
     "&.Mui-focused fieldset": { borderColor: "black" },
   },
 };
+
+export const NoteSubmitButtonStyles = {
+  bgcolor: "black",
+  color: "white",
+  mt: 2,
+  alignSelf: "center",
+  width: "fit-content",
+  px: 4,
+  py: 1,
+  borderRadius: "8px",
+  ":hover": {
+    background: "white",
+    color: "black",
+  },
+};

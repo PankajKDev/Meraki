@@ -4,8 +4,8 @@ const LightMode = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "#ffffff", // A softer white for the default background
-      paper: "#ffffff", // Paper background for cards
+      default: "#FFF8E7", // A softer white for the default background
+      paper: "#FFF4E0", // Paper background for cards
       darkbg: "#000000",
     },
     text: {
@@ -18,6 +18,7 @@ const LightMode = createTheme({
       selected: "#bbdefb", // Selected state color
     },
   },
+
   typography: {
     fontWeightRegular: 400,
     fontWeightBold: 700,
@@ -28,6 +29,7 @@ const LightMode = createTheme({
       letterSpacing: ".10rem",
       fontWeight: 700,
       color: "#000000",
+      marginTop: "40px",
     },
     h2: {
       fontFamily: "Roboto Slab",

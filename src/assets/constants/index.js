@@ -12,6 +12,10 @@ export const Links = [
     src: "/pomodoro",
   },
   {
+    linkName: "Notes",
+    src: "/notes",
+  },
+  {
     linkName: "Dashboard",
     src: "/dashboard",
   },
@@ -140,4 +144,17 @@ export const PomodoroPageContent = {
     "Start the timer to start using Pomodoro Timer and remember to take breaks.",
   orderImg: 2,
   orderText: 1,
+};
+
+export const mood = {
+  0.5: "Frustrated",
+  1: "Anxious",
+  1.5: "Sad",
+  2: "Content",
+  2.5: "Hopeful",
+  3: "Joyful",
+  3.5: "Ecstatic",
+  4: "Inspired",
+  4.5: "Thriving",
+  5: "Blissful",
 };

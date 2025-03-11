@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./assets/components/Header/Header";
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import LightMode from "./themes/LightMode";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router";
@@ -10,10 +10,12 @@ import Pomodoro from "./pages/Pomodoro";
 import RequireAuth from "./assets/utils/RequireAuth";
 import UserSync from "./assets/utils/UserSync";
 import Tasks from "./pages/Tasks";
+import Notes from "./pages/Notes";
 function App() {
   return (
     <>
       <ThemeProvider theme={LightMode}>
+        <CssBaseline />
         <UserSync />
         <Header />
         <Routes>
@@ -33,6 +35,14 @@ function App() {
             element={
               <RequireAuth>
                 <Tasks />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/notes"
+            element={
+              <RequireAuth>
+                <Notes />
               </RequireAuth>
             }
           />

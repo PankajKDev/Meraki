@@ -120,6 +120,7 @@ function InputTask({ handleOpen, open, theme }) {
                   justifyContent: "space-between",
                 }}
               >
+                {/* Date */}
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     sx={{ width: "50%" }}

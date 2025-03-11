@@ -111,9 +111,9 @@ function Header() {
               >
                 {AuthButtons.map((item) => (
                   <MenuItem key={item.id} onClick={handleCloseNavMenu}>
-                    <NavLink sx={{ textDecoration: "none" }} to={item.src}>
+                    <NavLink to={item.src}>
                       <Typography
-                        variant="body2"
+                        variant="body1"
                         sx={{ textAlign: "center", textDecoration: "none" }}
                       >
                         {item.name}

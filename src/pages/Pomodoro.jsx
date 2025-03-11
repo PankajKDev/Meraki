@@ -6,7 +6,7 @@ import { PomodoroPageContent } from "../assets/constants";
 
 function Pomodoro() {
   return (
-    <>
+    <Box>
       <Container
         maxWidth="lg"
         sx={{
@@ -21,7 +21,6 @@ function Pomodoro() {
           sx={{
             textAlign: "center",
             fontSize: "32px",
-            marginTop: "40px",
             fontWeight: "400",
           }}
         >
@@ -37,7 +36,7 @@ function Pomodoro() {
           <HeroCard {...PomodoroPageContent} />
         </Box>
       </Container>
-    </>
+    </Box>
   );
 }
 

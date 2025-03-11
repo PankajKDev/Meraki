@@ -1,4 +1,4 @@
-import { Box, Container, Typography, useTheme } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import TaskCreator from "../assets/components/Tasks/TaskCreator";
 import LabelMapper from "../assets/components/Tasks/LabelMapper";
 import { useUser } from "@clerk/clerk-react";
@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
 function Tasks() {
-  const theme = useTheme();
   const { user } = useUser();
   const [greeting, setGreeting] = useState("");
 
@@ -28,39 +27,31 @@ function Tasks() {
   }, []);
 
   return (
-    <Box
+    <Container
+      maxWidth="lg"
       sx={{
-        background: theme.palette.background.default,
         height: "100%",
-        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
       }}
     >
-      <Container
-        maxWidth="lg"
+      <Typography
+        variant="body1"
         sx={{
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
+          textAlign: "center",
+          fontSize: "48px",
+          marginTop: "40px",
+          color: "#121212",
         }}
       >
-        <Typography
-          variant="body1"
-          sx={{
-            textAlign: "center",
-            fontSize: "48px",
-            marginTop: "40px",
-            color: "#121212",
-          }}
-        >
-          Good {greeting} {user.fullName}!
-        </Typography>
-        <TaskCreator />
-        <LabelMapper AccordionName="Today" />
-        <LabelMapper AccordionName="Later" />
-        <LabelMapper AccordionName="Overdue" />
-      </Container>
-    </Box>
+        Good {greeting} {user.fullName}!
+      </Typography>
+      <TaskCreator />
+      <LabelMapper AccordionName="Today" />
+      <LabelMapper AccordionName="Later" />
+      <LabelMapper AccordionName="Overdue" />
+    </Container>
   );
 }
 
