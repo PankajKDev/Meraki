@@ -3,8 +3,17 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import NoteIcon from "./NoteIcon";
 import ReadMoreModal from "./ReadMoreModal";
+import PropTypes from "prop-types";
 
-function MappableNote() {
+function MappableNote({
+  moodRating,
+  content,
+  date,
+  name,
+  deleteNote,
+  pinNote,
+  isPinned,
+}) {
   const [open, setOpen] = useState(false);
   function handleOpen() {
     setOpen(!open);
@@ -29,7 +38,7 @@ function MappableNote() {
                 fontSize: "24px",
               }}
             >
-              Eat food
+              {name}
             </Typography>
             <Typography
               onClick={handleOpen}
@@ -38,6 +47,7 @@ function MappableNote() {
                 marginTop: "10px",
                 fontSize: "14px",
                 display: "-webkit-box",
+                height: "150px",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 WebkitLineClamp: 7, // Number of lines to display
@@ -46,22 +56,37 @@ function MappableNote() {
               }}
             >
               {/* i mean this typography */}
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Perspiciatis culpa voluptates quisquam necessitatibus enim aliquam
-              magnam vitae sint. Asperiores quo assumenda alias repellat, neque
-              tempore reiciendis consectetur, amet quam ab ad corporis eius vel
-              consequuntur rem! Sed laudantium doloremque voluptatum inventore
-              qui commodi nihil recusandae eveniet consequuntur saepe! Dolorem
-              consectetur accusamus in dicta ea, quidem commodi pariatur, nemo
-              non quia quisquam architecto harum sunt!
+              {content}
             </Typography>
-            <NoteIcon />
+            <NoteIcon
+              moodRating={moodRating}
+              deleteNote={deleteNote}
+              isPinned={isPinned}
+              pinNote={pinNote}
+            />
           </CardContent>
         </Card>
       </Grid>
-      <ReadMoreModal open={open} handleOpen={handleOpen} />
+      <ReadMoreModal
+        open={open}
+        handleOpen={handleOpen}
+        date={date}
+        content={content}
+        moodRating={moodRating}
+        name={name}
+      />
     </>
   );
 }
 
 export default MappableNote;
+
+MappableNote.propTypes = {
+  moodRating: PropTypes.number,
+  date: PropTypes.object,
+  content: PropTypes.string,
+  name: PropTypes.string,
+  deleteNote: PropTypes.func,
+  pinNote: PropTypes.func,
+  isPinned: PropTypes.bool,
+};

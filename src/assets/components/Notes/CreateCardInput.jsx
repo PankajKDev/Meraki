@@ -19,7 +19,6 @@ function CreateCardInput({ handleOpen, open }) {
     changeDate,
     changeNoteName,
     changeNote,
-    errors,
     MoodRating,
     changeMoodRating,
   } = useNoteStore();
@@ -56,7 +55,6 @@ function CreateCardInput({ handleOpen, open }) {
           </Typography>
           <Box
             component="form"
-            noValidate
             autoComplete="off"
             sx={{
               display: "flex",
@@ -66,8 +64,6 @@ function CreateCardInput({ handleOpen, open }) {
           >
             {/* Note Name Input */}
             <TextField
-              error={!!errors.NoteName}
-              helperText={errors.NoteName}
               label="Note Name"
               variant="outlined"
               fullWidth

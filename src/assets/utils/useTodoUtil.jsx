@@ -13,7 +13,7 @@ import { db } from "../../libs/firebase";
 import { useUser } from "@clerk/clerk-react";
 
 const TodoRef = collection(db, "Todos");
-function useTodoRead() {
+function useTodoUtil() {
   const { user } = useUser();
   const [data, setData] = useState([]);
   //References
@@ -46,4 +46,4 @@ function useTodoRead() {
   return { data, todoComplete, deleteTodo };
 }
 
-export default useTodoRead;
+export default useTodoUtil;

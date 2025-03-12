@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
-import useTodoRead from "../../utils/useTodoRead";
+import useTodoUtil from "../../utils/useTodoUtil";
 import dayjs from "dayjs";
 
 function LabelMapper({ AccordionName }) {
@@ -37,7 +37,7 @@ function LabelMapper({ AccordionName }) {
       return "#4CAF50";
     }
   }
-  const { data, todoComplete, deleteTodo } = useTodoRead();
+  const { data, todoComplete, deleteTodo } = useTodoUtil();
   const filteredTasks = data.filter(DateFilter);
   return (
     <Accordion

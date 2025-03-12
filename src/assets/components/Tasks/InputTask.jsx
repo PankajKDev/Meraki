@@ -39,7 +39,6 @@ function InputTask({ handleOpen, open }) {
     changeDate,
     changeLabel,
     changeNote,
-    errors,
   } = useTaskStore();
 
   const MenuProps = {
@@ -101,8 +100,6 @@ function InputTask({ handleOpen, open }) {
             <Box component="div" sx={formContainerStyles}>
               <TextField
                 fullWidth
-                error={!!errors.TodoName}
-                helperText={errors.TodoName}
                 onChange={(e) => changeTaskName(e.target.value)}
                 value={TodoName}
                 label="Todo Name"
