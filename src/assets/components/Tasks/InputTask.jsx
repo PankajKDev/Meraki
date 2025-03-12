@@ -2,11 +2,13 @@ import {
   Box,
   Container,
   FormControl,
+  IconButton,
   InputLabel,
   MenuItem,
   Modal,
   Select,
   TextField,
+  Typography,
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
 import useTaskStore from "../../../store/useTaskStore";
@@ -22,9 +24,10 @@ import {
 } from "../../constants/muiStyles";
 import { LABELS, PRIORITY_NAMES } from "../../constants";
 import TodoUpload from "../../utils/TodoUpload";
-import { Close } from "@mui/icons-material";
+
 import PropTypes from "prop-types";
-function InputTask({ handleOpen, open, theme }) {
+import { Close } from "@mui/icons-material";
+function InputTask({ handleOpen, open }) {
   const {
     TodoName,
     Priority,
@@ -63,7 +66,7 @@ function InputTask({ handleOpen, open, theme }) {
           <Box
             variant="div"
             sx={{
-              width: { xs: "90%", sm: "50%", md: "50%" },
+              width: { xs: "90%", sm: "70%", md: "50%" },
               height: "fit-content",
               background: "white",
               paddingBottom: "20px",
@@ -72,18 +75,28 @@ function InputTask({ handleOpen, open, theme }) {
           >
             <Box
               sx={{
-                width: "full",
                 display: "flex",
-                justifyContent: "space-between",
-                bgcolor: "black",
-                padding: "15px",
-                borderRadius: "10px 10px 0px 0px",
-                fontFamily: theme.typography.body1,
-                color: "white",
+                justifyContent: "center",
+
+                alignItems: "center",
               }}
             >
-              Add Tasks
-              <Close onClick={handleOpen} sx={{ cursor: "pointer" }} />
+              <Box
+                sx={{
+                  width: "80%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <Typography variant="h1">Add Tasks</Typography>
+                <IconButton
+                  onClick={handleOpen}
+                  sx={{ fontSize: "32px", color: "black", marginTop: "40px" }}
+                >
+                  <Close />
+                </IconButton>
+              </Box>
             </Box>
             <Box component="div" sx={formContainerStyles}>
               <TextField

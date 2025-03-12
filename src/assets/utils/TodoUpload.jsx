@@ -5,6 +5,8 @@ import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { Button } from "@mui/material";
 import { submitButtonStyles } from "../constants/muiStyles";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import SnackbarAlert from "../components/Reusable/SnackbarAlert";
 
 function TodoUpload({ handleOpen }) {
   const {
@@ -13,10 +15,19 @@ function TodoUpload({ handleOpen }) {
     TaskDate,
     Label,
     Note,
-    validate,
     changeTaskName,
     changeNote,
   } = useTaskStore();
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const { user, isSignedIn } = useUser();
   if (!isSignedIn) {
     throw new Error("User not signed in");
@@ -34,8 +45,17 @@ function TodoUpload({ handleOpen }) {
     changeTaskName("");
     changeNote("");
   }
+  function validation() {
+    if (TodoName === "") {
+      setOpen(true);
+      return false;
+    }
+    return true;
+  }
   async function TaskUpload() {
-    await validate();
+    if (!validation()) {
+      return;
+    }
     const TodoRef = collection(db, "Todos");
     await addDoc(TodoRef, { ...todoData });
     inputReset();
@@ -46,6 +66,12 @@ function TodoUpload({ handleOpen }) {
       <Button onClick={TaskUpload} sx={submitButtonStyles} variant="outlined">
         Submit
       </Button>
+      <SnackbarAlert
+        open={open}
+        handleClose={handleClose}
+        severity="error"
+        message="Note Name is mandatory"
+      />
     </>
   );
 }

@@ -36,7 +36,7 @@ function ReadMoreModal({ open, handleOpen }) {
           sx={{
             mt: 2,
             height: 400,
-            overflowY: "scroll",
+            overflowY: "auto",
           }}
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis

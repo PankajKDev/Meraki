@@ -11,8 +11,7 @@ function UserSync() {
       const userData = {
         id: user.id,
         email: user.primaryEmailAddress?.emailAddress,
-        firstName: user.firstName,
-        lastName: user.lastName,
+        fullName: user.fullName,
         pomodoro: 0,
         tasksCompleted: 0,
         createdAt: new Date(),
