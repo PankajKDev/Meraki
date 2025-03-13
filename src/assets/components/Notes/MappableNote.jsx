@@ -25,7 +25,6 @@ function MappableNote({
           sx={{
             width: "100%",
             height: "300px",
-            background: "linear-gradient(to bottom, #fefefe, #f8f9fa)",
           }}
         >
           <CardContent>

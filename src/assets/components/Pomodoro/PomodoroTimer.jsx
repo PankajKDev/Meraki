@@ -8,6 +8,7 @@ import { useUser } from "@clerk/clerk-react";
 import { db } from "../../../libs/firebase";
 import { doc, increment, updateDoc } from "firebase/firestore";
 import { PomodoroModeButtons } from "../../constants";
+import { useTheme } from "@emotion/react";
 
 const MODES = {
   FOCUS: "Focus",
@@ -16,6 +17,7 @@ const MODES = {
 };
 
 function PomodoroTimer() {
+  const theme = useTheme();
   const { user, isSignedIn } = useUser();
   const { Focus, ShortBreak, LongBreak } = usePomodoroStore();
   const [mode, setMode] = useState(MODES.FOCUS);
@@ -116,13 +118,17 @@ function PomodoroTimer() {
       >
         <IconButton onClick={isRunning ? pause : resume}>
           {isRunning ? (
-            <PauseCircleFilled sx={{ fill: "black", fontSize: "60px" }} />
+            <PauseCircleFilled
+              sx={{ fill: theme.palette.text, fontSize: "60px" }}
+            />
           ) : (
-            <PlayCircleFilled sx={{ fill: "black", fontSize: "60px" }} />
+            <PlayCircleFilled
+              sx={{ fill: theme.palette.text, fontSize: "60px" }}
+            />
           )}
         </IconButton>
 
-        <DrawerSettings />
+        <DrawerSettings color={theme.palette.text} />
       </Box>
     </>
   );

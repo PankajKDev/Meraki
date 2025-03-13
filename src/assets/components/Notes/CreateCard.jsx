@@ -14,7 +14,7 @@ function CreateCard() {
         <Card
           sx={{
             height: "300px",
-            border: "2px dashed purple",
+
             width: "100%",
             display: "flex",
             justifyContent: "center",
@@ -30,7 +30,7 @@ function CreateCard() {
           }}
         >
           <CardContent onClick={handleOpen}>
-            <AddCircle sx={{ fontSize: "100px", fill: "purple" }} />
+            <AddCircle sx={{ fontSize: "100px" }} />
             <Typography variant="body1" sx={{ fontSize: "20px" }}>
               Add note
             </Typography>

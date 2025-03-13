@@ -42,7 +42,6 @@ function Tasks() {
           textAlign: "center",
           fontSize: "48px",
           marginTop: "40px",
-          color: "#121212",
         }}
       >
         Good {greeting} {user.fullName}!

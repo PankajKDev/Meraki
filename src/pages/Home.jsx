@@ -1,15 +1,10 @@
-import { Box, Container, useTheme } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import HeroCard from "../assets/components/Home/HeroCard";
 import { HeroContent } from "../assets/constants";
 
 function Home() {
-  const theme = useTheme();
   return (
-    <Box
-      sx={{
-        background: theme.palette.background.default,
-      }}
-    >
+    <Box>
       <Container>
         {HeroContent.map((item) => (
           <HeroCard

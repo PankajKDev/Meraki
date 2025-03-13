@@ -1,97 +1,69 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material";
 
 const DarkMode = createTheme({
   palette: {
     mode: "dark",
-    primary: {
-      main: "#8AB4F8", // Light blue variant of the original primary
-      light: "#A6C8FF",
-      dark: "#6691E3",
-      contrastText: "#FFFFFF",
-    },
-    secondary: {
-      main: "#FF8A7C", // Soft coral for accent
-      light: "#FFA899",
-      dark: "#E66C5C",
-      contrastText: "#FFFFFF",
-    },
     background: {
-      default: "#121212", // Deep dark background
-      paper: "#1E1E1E", // Slightly lighter for cards
-      darkbg: "#000000", // Pure black for accents
+      default: "#1A1A2E", // Deep navy base
+      paper: "#16213E", // Darker navy for cards
+      darkbg: "#0F3460", // Rich accent navy
     },
     text: {
-      primary: "#E0E0E0", // Soft white for primary text
-      secondary: "#B0B0B0", // Medium gray for secondary
-      disabled: "#6C6C6C", // Subtle disabled text
+      primary: "#E6E6FA", // Soft lavender white
+      secondary: "#A0A0C0", // Muted periwinkle
     },
     action: {
-      active: "#8AB4F8",
-      hover: "rgba(138, 180, 248, 0.16)",
-      selected: "rgba(138, 180, 248, 0.24)",
-      disabled: "rgba(255, 255, 255, 0.3)",
+      active: "#4CAF50", // Vibrant green for actions
+      hover: "#2E7D32", // Darker green hover
+      selected: "#1B5E20", // Deep green selection
     },
-    divider: "rgba(255, 255, 255, 0.12)",
-    error: {
-      main: "#CF6679",
-      light: "#E67C8D",
-      dark: "#B04F62",
-    },
-    warning: {
-      main: "#FFB347",
-      light: "#FFC26B",
-      dark: "#E69D3C",
-    },
-    info: {
-      main: "#4FC3F7",
-      light: "#6BE6FF",
-      dark: "#29B6F6",
-    },
-    success: {
-      main: "#81C784",
-      light: "#A5D6A7",
-      dark: "#66BB6A",
+    accents: {
+      coral: "#FF6B6B", // Warm coral for highlights
+      teal: "#64FFDA", // Bright teal for contrast
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontWeightRegular: 400,
     fontWeightBold: 700,
+
     h1: {
+      fontFamily: "Bebas Neue",
       fontSize: "2rem",
+      letterSpacing: ".10rem",
       fontWeight: 700,
-      color: "#E0E0E0", // Matches primary color
-      lineHeight: 1.2,
+      color: "#E6E6FA", // Matching text.primary
+      marginTop: "40px",
+      textShadow: "0 2px 4px rgba(0,0,0,0.3)",
     },
     h2: {
+      fontFamily: "Roboto Slab",
       fontSize: "1.5rem",
       fontWeight: 600,
-      color: "#E0E0E0",
-      lineHeight: 1.3,
+      color: "#64FFDA", // Using accent teal
+      textShadow: "0 1px 2px rgba(0,0,0,0.2)",
     },
     body1: {
       fontSize: "1rem",
-      color: "#E0E0E0",
-      lineHeight: 1.5,
+      color: "#E6E6FA", // Primary text color
+      fontFamily: "Noto Sans",
+      lineHeight: 1.6,
     },
     body2: {
-      fontSize: "0.875rem",
-      color: "#B0B0B0",
-      lineHeight: 1.43,
+      fontFamily: "Roboto Slab",
+      fontSize: "1rem",
+      fontWeight: 200,
+      color: "#A0A0C0", // Secondary text color
+      letterSpacing: "0.03rem",
     },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundImage: "none", // Removes default MUI paper texture
+          "&:hover": {
+            transform: "translateY(-1px)",
+            boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
+          },
         },
       },
     },

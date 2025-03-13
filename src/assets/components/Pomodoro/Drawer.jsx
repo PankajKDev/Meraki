@@ -4,8 +4,9 @@ import Drawer from "@mui/material/Drawer";
 import { IconButton } from "@mui/material";
 import { Settings } from "@mui/icons-material";
 import DrawerList from "./DrawerList";
+import PropTypes from "prop-types";
 
-export default function DrawerSettings() {
+export default function DrawerSettings({ color }) {
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -14,7 +15,7 @@ export default function DrawerSettings() {
   return (
     <div>
       <IconButton onClick={toggleDrawer(true)}>
-        <Settings sx={{ fill: "black", fontSize: "60px" }} />
+        <Settings sx={{ fill: color, fontSize: "60px" }} />
       </IconButton>
       <Drawer open={open}>
         <DrawerList toggleDrawer={toggleDrawer} />
@@ -22,3 +23,7 @@ export default function DrawerSettings() {
     </div>
   );
 }
+
+DrawerSettings.propTypes = {
+  color: PropTypes.string,
+};

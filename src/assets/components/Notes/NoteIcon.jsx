@@ -33,15 +33,15 @@ function NoteIcon({ moodRating, deleteNote, pinNote, isPinned }) {
         )}
       </Box>
       <Box sx={{ display: "flex", gap: "20px" }}>
-        <Tooltip title="Pin Note">
+        <Tooltip title={isPinned ? "unpin note" : "pin note"}>
           <IconButton
             onClick={pinNote}
             sx={{
-              border: "1px solid #000",
-              background: isPinned ? "purple" : "white",
-              color: isPinned ? "white" : "purple",
+              background: isPinned ? "green" : "white",
+              border: "1px solid",
+              color: isPinned ? "white" : "green",
               ":hover": {
-                color: "purple",
+                color: "inherit",
               },
             }}
           >
@@ -52,11 +52,12 @@ function NoteIcon({ moodRating, deleteNote, pinNote, isPinned }) {
           <IconButton
             onClick={deleteNote}
             sx={{
-              border: "1px solid purple",
-              background: "purple",
+              border: "1px solid red",
+              background: "red",
               color: "white",
               ":hover": {
-                color: "purple",
+                color: "red",
+                background: "white",
               },
             }}
           >

@@ -50,7 +50,7 @@ function ReadMoreModal({ open, handleOpen, date, content, moodRating, name }) {
                 {dayjs(date.toDate()).format("DD MMM YYYY")}
               </Typography>
             </Box>
-            <Typography sx={{ color: "purple" }}>
+            <Typography sx={{ color: "orange" }}>
               Mood: {mood[moodRating]}
             </Typography>
           </Box>

@@ -27,6 +27,7 @@ import TodoUpload from "../../utils/TodoUpload";
 
 import PropTypes from "prop-types";
 import { Close } from "@mui/icons-material";
+import { useTheme } from "@emotion/react";
 function InputTask({ handleOpen, open }) {
   const {
     TodoName,
@@ -49,6 +50,7 @@ function InputTask({ handleOpen, open }) {
       },
     },
   };
+  const theme = useTheme();
 
   return (
     <>
@@ -67,7 +69,7 @@ function InputTask({ handleOpen, open }) {
             sx={{
               width: { xs: "90%", sm: "70%", md: "50%" },
               height: "fit-content",
-              background: "white",
+              background: theme.palette.background.paper,
               paddingBottom: "20px",
               borderRadius: "10px",
             }}
@@ -91,7 +93,7 @@ function InputTask({ handleOpen, open }) {
                 <Typography variant="h1">Add Tasks</Typography>
                 <IconButton
                   onClick={handleOpen}
-                  sx={{ fontSize: "32px", color: "black", marginTop: "40px" }}
+                  sx={{ fontSize: "32px", marginTop: "40px" }}
                 >
                   <Close />
                 </IconButton>
@@ -114,7 +116,6 @@ function InputTask({ handleOpen, open }) {
                   defaultValue="priority 1"
                   name="Priority"
                   label="Priority"
-                  sx={selectStyles}
                 >
                   {PRIORITY_NAMES.map((item) => (
                     <MenuItem key={item.value} value={item.value}>

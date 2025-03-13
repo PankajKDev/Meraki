@@ -106,7 +106,7 @@ function CreateCardInput({ handleOpen, open }) {
                 Today&apos;s Mood:
               </Typography>
               <Rating
-                icon={<Mood sx={{ color: "purple" }} />}
+                icon={<Mood />}
                 name="hover-feedback"
                 value={MoodRating}
                 precision={0.5}
@@ -122,7 +122,7 @@ function CreateCardInput({ handleOpen, open }) {
                 }
               />
               {MoodRating !== null && (
-                <Typography sx={{ ml: 2, color: "purple" }}>
+                <Typography sx={{ ml: 2 }}>
                   {mood[hover !== -1 ? hover : MoodRating]}
                 </Typography>
               )}

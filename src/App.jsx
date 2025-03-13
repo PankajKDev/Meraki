@@ -11,10 +11,12 @@ import RequireAuth from "./assets/utils/RequireAuth";
 import UserSync from "./assets/utils/UserSync";
 import Tasks from "./pages/Tasks";
 import Notes from "./pages/Notes";
+import DarkMode from "./themes/DarkMode";
+
 function App() {
   return (
     <>
-      <ThemeProvider theme={LightMode}>
+      <ThemeProvider theme={DarkMode}>
         <CssBaseline />
         <UserSync />
         <Header />
