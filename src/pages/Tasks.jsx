@@ -4,6 +4,7 @@ import LabelMapper from "../assets/components/Tasks/LabelMapper";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
+import { pageContainer } from "../assets/constants/muiStyles";
 
 function Tasks() {
   const { user } = useUser();
@@ -27,15 +28,7 @@ function Tasks() {
   }, []);
 
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <Container maxWidth="lg" sx={pageContainer}>
       <Typography
         variant="body1"
         sx={{

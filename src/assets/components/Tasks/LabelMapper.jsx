@@ -6,7 +6,6 @@ import {
   Box,
   Checkbox,
   Chip,
-  IconButton,
   Tooltip,
   Typography,
 } from "@mui/material";
@@ -175,9 +174,10 @@ function LabelMapper({ AccordionName }) {
                     />
                   </Box>
                   <Tooltip title="Delete Task">
-                    <IconButton onClick={() => deleteTodo(item.id)}>
-                      <Delete sx={{ fill: "#FF7043" }} />
-                    </IconButton>
+                    <Delete
+                      onClick={() => deleteTodo(item.id)}
+                      sx={{ fill: "#FF7043" }}
+                    />
                   </Tooltip>
                 </Box>
               </AccordionSummary>

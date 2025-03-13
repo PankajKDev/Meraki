@@ -1,4 +1,12 @@
-// Styled components in a separate export constants file (recommended)
+//page container
+export const pageContainer = {
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  flexDirection: "column",
+};
+
+//forms
 export const formContainerStyles = {
   width: "100%",
   height: "100%",
@@ -12,19 +20,6 @@ export const textFieldStyles = {
   mt: "20px",
   maxWidth: "80%",
   height: "70px",
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": { borderColor: "black" },
-    "&:hover fieldset": { borderColor: "black" },
-    "&.Mui-focused fieldset": { borderColor: "black" },
-  },
-};
-
-export const selectStyles = {
-  "& .MuiSelect-icon": { color: "black" },
-  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black",
-    borderWidth: 2,
-  },
 };
 
 export const submitButtonStyles = {
@@ -40,11 +35,6 @@ export const TextAreaStyles = {
   width: "80%",
   maxHeight: "120px",
   overflow: "auto",
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": { borderColor: "black" },
-    "&:hover fieldset": { borderColor: "black" },
-    "&.Mui-focused fieldset": { borderColor: "black" },
-  },
 };
 
 export const NoteSubmitButtonStyles = {

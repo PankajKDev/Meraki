@@ -18,7 +18,6 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 import {
   formContainerStyles,
-  selectStyles,
   TextAreaStyles,
   textFieldStyles,
 } from "../../constants/muiStyles";
@@ -152,7 +151,6 @@ function InputTask({ handleOpen, open }) {
                     onChange={(e) => changeLabel(e.target.value)}
                     name="Labels"
                     label="Labels"
-                    sx={{ selectStyles }}
                   >
                     {LABELS.map((item) => (
                       <MenuItem key={item.value} value={item.value}>

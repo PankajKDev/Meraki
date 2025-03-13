@@ -119,16 +119,16 @@ function PomodoroTimer() {
         <IconButton onClick={isRunning ? pause : resume}>
           {isRunning ? (
             <PauseCircleFilled
-              sx={{ fill: theme.palette.text, fontSize: "60px" }}
+              sx={{ fill: theme.palette.text.primary, fontSize: "60px" }}
             />
           ) : (
             <PlayCircleFilled
-              sx={{ fill: theme.palette.text, fontSize: "60px" }}
+              sx={{ fill: theme.palette.text.primary, fontSize: "60px" }}
             />
           )}
         </IconButton>
 
-        <DrawerSettings color={theme.palette.text} />
+        <DrawerSettings color={theme.palette.text.primary} />
       </Box>
     </>
   );

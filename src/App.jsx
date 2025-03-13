@@ -12,11 +12,15 @@ import UserSync from "./assets/utils/UserSync";
 import Tasks from "./pages/Tasks";
 import Notes from "./pages/Notes";
 import DarkMode from "./themes/DarkMode";
+import useThemeStore from "./store/useThemeStore";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
+  const { isDarkMode } = useThemeStore();
+  console.log(isDarkMode);
   return (
     <>
-      <ThemeProvider theme={DarkMode}>
+      <ThemeProvider theme={isDarkMode ? DarkMode : LightMode}>
         <CssBaseline />
         <UserSync />
         <Header />
@@ -45,6 +49,14 @@ function App() {
             element={
               <RequireAuth>
                 <Notes />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <RequireAuth>
+                <Dashboard />
               </RequireAuth>
             }
           />

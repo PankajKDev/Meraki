@@ -13,7 +13,10 @@ import { AuthButtons, Links } from "../../constants";
 import { NavLink } from "react-router";
 import { useState } from "react";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+import useThemeStore from "../../../store/useThemeStore";
+import ModeIcon from "./ModeIcon";
 function Header() {
+  const { changeMode, isDarkMode } = useThemeStore();
   const [anchorElNav, setAnchorElNav] = useState(false);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -90,6 +93,16 @@ function Header() {
                     </NavLink>
                   </MenuItem>
                 ))}
+
+                <MenuItem>
+                  <ModeIcon
+                    isDarkMode={isDarkMode}
+                    changeMode={() => {
+                      changeMode();
+                      handleCloseNavMenu();
+                    }}
+                  />
+                </MenuItem>
               </SignedIn>
             </Menu>
             <SignedOut>
@@ -175,6 +188,8 @@ function Header() {
                   </NavLink>
                 </Button>
               ))}
+
+              <ModeIcon isDarkMode={isDarkMode} changeMode={changeMode} />
             </SignedIn>
             <SignedOut>
               {AuthButtons.map((item) => (

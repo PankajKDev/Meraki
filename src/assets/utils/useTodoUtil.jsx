@@ -2,8 +2,8 @@ import {
   collection,
   deleteDoc,
   doc,
-  getDocs,
   increment,
+  onSnapshot,
   query,
   updateDoc,
   where,
@@ -31,18 +31,16 @@ function useTodoUtil() {
   }
 
   useEffect(() => {
-    const getData = async () => {
-      const fetchQuery = query(TodoRef, where("user", "==", user.id));
-      const fetchedData = await getDocs(fetchQuery);
-      setData(
-        fetchedData.docs.map((item) => ({
-          ...item.data(),
-          id: item.id,
-        }))
-      );
-    };
-    getData();
-  }, [data, user]);
+    const fetchQuery = query(TodoRef, where("user", "==", user.id));
+    const unsubscribe = onSnapshot(fetchQuery, (querySnapshot) => {
+      let todosArr = [];
+      querySnapshot.forEach((doc) => {
+        todosArr.push({ ...doc.data(), id: doc.id });
+      });
+      setData(todosArr);
+    });
+    return () => unsubscribe();
+  }, [user.id]);
   return { data, todoComplete, deleteTodo };
 }
 

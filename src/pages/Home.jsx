@@ -1,11 +1,12 @@
 import { Box, Container } from "@mui/material";
 import HeroCard from "../assets/components/Home/HeroCard";
 import { HeroContent } from "../assets/constants";
+import { pageContainer } from "../assets/constants/muiStyles";
 
 function Home() {
   return (
     <Box>
-      <Container>
+      <Container sx={pageContainer}>
         {HeroContent.map((item) => (
           <HeroCard
             key={item.id}

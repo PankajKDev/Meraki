@@ -2,7 +2,7 @@ import {
   collection,
   deleteDoc,
   doc,
-  getDocs,
+  onSnapshot,
   query,
   updateDoc,
   where,
@@ -30,18 +30,16 @@ function useNoteUtil() {
   }
   //get Notes
   useEffect(() => {
-    const getData = async () => {
-      const fetchQuery = query(NoteRef, where("user", "==", user.id));
-      const fetchedData = await getDocs(fetchQuery);
-      setData(
-        fetchedData.docs.map((item) => ({
-          ...item.data(),
-          id: item.id,
-        }))
-      );
-    };
-    getData();
-  }, [data, user]);
+    const fetchQuery = query(NoteRef, where("user", "==", user.id));
+    const unsubscribe = onSnapshot(fetchQuery, (querySnapShot) => {
+      let noteArr = [];
+      querySnapShot.forEach((doc) => {
+        noteArr.push({ ...doc.data(), id: doc.id });
+      });
+      setData(noteArr);
+    });
+    return () => unsubscribe();
+  }, [user.id]);
   return { data, deleteNote, pinNote };
 }
 
