@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./assets/components/Header/Header";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, Box } from "@mui/material";
 import LightMode from "./themes/LightMode";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router";
@@ -17,44 +17,53 @@ import Footer from "./assets/components/Footer.jsx/Footer";
 
 function App() {
   const { isDarkMode } = useThemeStore();
+
   return (
-    <>
-      <ThemeProvider theme={isDarkMode ? DarkMode : LightMode}>
-        <CssBaseline />
-        <UserSync />
+    <ThemeProvider theme={isDarkMode ? DarkMode : LightMode}>
+      <CssBaseline />
+      <UserSync />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100dvh",
+        }}
+      >
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sign-in" element={<CreateAccount />} />
-          <Route path="/sign-up" element={<LoginAccount />} />
-          <Route
-            path="/pomodoro"
-            element={
-              <RequireAuth>
-                <Pomodoro />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/tasks"
-            element={
-              <RequireAuth>
-                <Tasks />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/notes"
-            element={
-              <RequireAuth>
-                <Notes />
-              </RequireAuth>
-            }
-          />
-        </Routes>
+        <Box sx={{ flexGrow: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sign-in" element={<CreateAccount />} />
+            <Route path="/sign-up" element={<LoginAccount />} />
+            <Route
+              path="/pomodoro"
+              element={
+                <RequireAuth>
+                  <Pomodoro />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/tasks"
+              element={
+                <RequireAuth>
+                  <Tasks />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/notes"
+              element={
+                <RequireAuth>
+                  <Notes />
+                </RequireAuth>
+              }
+            />
+          </Routes>
+        </Box>
         <Footer />
-      </ThemeProvider>
-    </>
+      </Box>
+    </ThemeProvider>
   );
 }
 
