@@ -1,14 +1,13 @@
-// clerkAppearanceConfig.js
-import LightMode from "./LightMode"; // Adjust the path as needed
+import LightMode from "./LightMode";
 
 const clerkTheme = {
   elements: {
     card: {
-      backgroundColor: LightMode.palette.background.paper, // Card background
-      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Subtle shadow for cards
-      borderRadius: "12px", // Rounded corners
+      backgroundColor: LightMode.palette.background.paper,
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+      borderRadius: "12px",
     },
-    // Typography
+
     headerTitle: {
       fontFamily: LightMode.typography.fontFamily,
       fontSize: "30px",
@@ -26,10 +25,10 @@ const clerkTheme = {
       fontSize: LightMode.typography.body1.fontSize,
       color: LightMode.palette.text.primary,
     },
-    // Buttons
+
     buttonPrimary: {
       backgroundColor: LightMode.palette.action.active,
-      color: "#ffffff", // White text for contrast
+      color: "#ffffff",
       borderRadius: "8px",
       "&:hover": {
         backgroundColor: LightMode.palette.action.hover,
@@ -43,7 +42,7 @@ const clerkTheme = {
         backgroundColor: LightMode.palette.action.hover,
       },
     },
-    // Input fields
+
     inputField: {
       backgroundColor: LightMode.palette.background.paper,
       borderColor: LightMode.palette.text.secondary,
@@ -53,7 +52,7 @@ const clerkTheme = {
         borderColor: LightMode.palette.action.active,
       },
     },
-    // Links
+
     footerLink: {
       color: LightMode.palette.action.active,
       fontFamily: LightMode.typography.fontFamily,

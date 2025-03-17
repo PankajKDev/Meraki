@@ -4,18 +4,18 @@ const LightMode = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "#FFF8E7", // A softer white for the default background
-      paper: "#FFF4E0", // Paper background for cards
+      default: "#FFF8E7",
+      paper: "#FFF4E0",
       darkbg: "#000000",
     },
     text: {
-      primary: "#212121", // Darker text for better readability
-      secondary: "#757575", // Lighter gray for secondary text
+      primary: "#212121",
+      secondary: "#757575",
     },
     action: {
-      active: "#1976d2", // Primary action color (e.g., buttons)
-      hover: "#e3f2fd", // Light hover effect for buttons
-      selected: "#bbdefb", // Selected state color
+      active: "#1976d2",
+      hover: "#e3f2fd",
+      selected: "#bbdefb",
     },
   },
 

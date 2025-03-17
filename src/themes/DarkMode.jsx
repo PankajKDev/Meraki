@@ -4,22 +4,22 @@ const DarkMode = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#1A1A2E", // Deep navy base
-      paper: "#16213E", // Darker navy for cards
-      darkbg: "#000000", // Rich accent navy
+      default: "#1A1A2E",
+      paper: "#16213E",
+      darkbg: "#000000",
     },
     text: {
-      primary: "#E6E6FA", // Soft lavender white
-      secondary: "#A0A0C0", // Muted periwinkle
+      primary: "#E6E6FA",
+      secondary: "#A0A0C0",
     },
     action: {
-      active: "#4CAF50", // Vibrant green for actions
-      hover: "#2E7D32", // Darker green hover
-      selected: "#1B5E20", // Deep green selection
+      active: "#4CAF50",
+      hover: "#2E7D32",
+      selected: "#1B5E20",
     },
     accents: {
-      coral: "#FF6B6B", // Warm coral for highlights
-      teal: "#64FFDA", // Bright teal for contrast
+      coral: "#FF6B6B",
+      teal: "#64FFDA",
     },
   },
   typography: {
@@ -30,7 +30,7 @@ const DarkMode = createTheme({
       fontSize: "2rem",
       letterSpacing: ".10rem",
       fontWeight: 700,
-      color: "#E6E6FA", // Matching text.primary
+      color: "#E6E6FA",
       textShadow: "0 2px 4px rgba(0,0,0,0.3)",
     },
     h1: {
@@ -38,7 +38,7 @@ const DarkMode = createTheme({
       fontSize: "2rem",
       letterSpacing: ".10rem",
       fontWeight: 700,
-      color: "#E6E6FA", // Matching text.primary
+      color: "#E6E6FA",
       marginTop: "40px",
       textShadow: "0 2px 4px rgba(0,0,0,0.3)",
     },
@@ -46,12 +46,12 @@ const DarkMode = createTheme({
       fontFamily: "Roboto Slab",
       fontSize: "1.5rem",
       fontWeight: 600,
-      color: "#64FFDA", // Using accent teal
+      color: "#64FFDA",
       textShadow: "0 1px 2px rgba(0,0,0,0.2)",
     },
     body1: {
       fontSize: "1rem",
-      color: "#E6E6FA", // Primary text color
+      color: "#E6E6FA",
       fontFamily: "Noto Sans",
       lineHeight: 1.6,
     },
@@ -59,7 +59,7 @@ const DarkMode = createTheme({
       fontFamily: "Roboto Slab",
       fontSize: "1rem",
       fontWeight: 200,
-      color: "#A0A0C0", // Secondary text color
+      color: "#A0A0C0",
       letterSpacing: "0.03rem",
     },
   },

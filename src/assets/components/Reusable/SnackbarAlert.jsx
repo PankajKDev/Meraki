@@ -1,5 +1,3 @@
-// CustomSnackbar.js
-
 import { Snackbar, Alert } from "@mui/material";
 import PropTypes from "prop-types";
 
@@ -9,7 +7,7 @@ const SnackbarAlert = ({ open, handleClose, message, severity }) => {
       open={open}
       autoHideDuration={1500}
       onClose={handleClose}
-      anchorOrigin={{ vertical: "bottom", horizontal: "left" }} // Positioning
+      anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
     >
       <Alert
         onClose={handleClose}

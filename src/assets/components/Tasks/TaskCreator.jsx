@@ -60,8 +60,8 @@ function TaskCreator() {
           cursor: "pointer",
           transition: (theme) =>
             theme.transitions.create(["background-color", "transform"], {
-              duration: theme.transitions.duration.standard, // Default duration
-              easing: theme.transitions.easing.easeInOut, // Default easing
+              duration: theme.transitions.duration.standard,
+              easing: theme.transitions.easing.easeInOut,
             }),
           ":hover": {
             backgroundColor: "#AEC6CF",

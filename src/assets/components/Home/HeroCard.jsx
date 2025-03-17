@@ -52,9 +52,9 @@ function HeroCard({ orderImg, orderText, imgUrl, heading, subHeading }) {
           component="h1"
           sx={{
             fontSize: {
-              xs: "1.5rem", // Font size for extra small screens
-              sm: "2rem", // Font size for small screens
-              md: "2rem", // Font size for medium screens
+              xs: "1.5rem",
+              sm: "2rem",
+              md: "2rem",
             },
             textWrap: {
               sm: "wrap",
