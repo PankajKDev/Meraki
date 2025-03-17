@@ -22,6 +22,13 @@ const LightMode = createTheme({
   typography: {
     fontWeightRegular: 400,
     fontWeightBold: 700,
+    logo: {
+      fontFamily: "Bebas Neue",
+      fontSize: "2rem",
+      letterSpacing: ".10rem",
+      fontWeight: 700,
+      color: "#ffffff",
+    },
 
     h1: {
       fontFamily: "Bebas Neue",

@@ -1,7 +1,7 @@
 import { PauseCircleFilled, PlayCircleFilled } from "@mui/icons-material";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import { useTimer } from "react-timer-hook";
-import DrawerSettings from "./Drawer";
+import DrawerSettings from "./DrawerSettings";
 import usePomodoroStore from "../../../store/usePomodoroStore";
 import { useCallback, useEffect, useState } from "react";
 import { useUser } from "@clerk/clerk-react";

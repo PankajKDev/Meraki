@@ -6,7 +6,7 @@ const DarkMode = createTheme({
     background: {
       default: "#1A1A2E", // Deep navy base
       paper: "#16213E", // Darker navy for cards
-      darkbg: "#0F3460", // Rich accent navy
+      darkbg: "#000000", // Rich accent navy
     },
     text: {
       primary: "#E6E6FA", // Soft lavender white
@@ -25,7 +25,14 @@ const DarkMode = createTheme({
   typography: {
     fontWeightRegular: 400,
     fontWeightBold: 700,
-
+    logo: {
+      fontFamily: "Bebas Neue",
+      fontSize: "2rem",
+      letterSpacing: ".10rem",
+      fontWeight: 700,
+      color: "#E6E6FA", // Matching text.primary
+      textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+    },
     h1: {
       fontFamily: "Bebas Neue",
       fontSize: "2rem",

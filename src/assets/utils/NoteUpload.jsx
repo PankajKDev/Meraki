@@ -3,7 +3,14 @@ import { Button } from "@mui/material";
 import useNoteStore from "../../store/useNotesStore";
 import PropTypes from "prop-types";
 import { useUser } from "@clerk/clerk-react";
-import { addDoc, collection, Timestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  increment,
+  Timestamp,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../../libs/firebase";
 import { NoteSubmitButtonStyles } from "../constants/muiStyles";
 function NoteUpload({ handleOpen, handleClose }) {
@@ -43,7 +50,11 @@ function NoteUpload({ handleOpen, handleClose }) {
       return;
     }
     const NoteRef = collection(db, "Notes");
+    const UserRef = doc(db, "Users", user.id);
     await addDoc(NoteRef, { ...NoteData });
+    await updateDoc(UserRef, {
+      notesCreated: increment(1),
+    });
     inputReset();
     handleOpen();
   }

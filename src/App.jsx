@@ -13,11 +13,10 @@ import Tasks from "./pages/Tasks";
 import Notes from "./pages/Notes";
 import DarkMode from "./themes/DarkMode";
 import useThemeStore from "./store/useThemeStore";
-import Dashboard from "./pages/Dashboard";
+import Footer from "./assets/components/Footer.jsx/Footer";
 
 function App() {
   const { isDarkMode } = useThemeStore();
-  console.log(isDarkMode);
   return (
     <>
       <ThemeProvider theme={isDarkMode ? DarkMode : LightMode}>
@@ -52,15 +51,8 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route
-            path="/dashboard"
-            element={
-              <RequireAuth>
-                <Dashboard />
-              </RequireAuth>
-            }
-          />
         </Routes>
+        <Footer />
       </ThemeProvider>
     </>
   );

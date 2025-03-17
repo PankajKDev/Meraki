@@ -15,49 +15,10 @@ export const Links = [
     linkName: "Notes",
     src: "/notes",
   },
-  {
-    linkName: "Dashboard",
-    src: "/dashboard",
-  },
 ];
 export const AuthButtons = [
   { id: 1, name: "Sign In", src: "/sign-in" },
   { id: 2, name: "Sign Up", src: "/sign-up" },
-];
-export const SiteMap = [
-  {
-    linkName: "Github",
-    src: "/",
-  },
-  {
-    linkName: "LinkedIn",
-    src: "/",
-  },
-  {
-    linkName: "Email",
-    src: "/",
-  },
-];
-
-export const TaskImages = [
-  {
-    img: "/todo/frog.png",
-    heading: "Frog Task",
-    subHeading:
-      "The most Important and hardest task of the day. There can be only one Frog Task and It should be A hard task than other tasks",
-  },
-  {
-    img: "/todo/fly.png",
-    heading: "Fly Task",
-    subHeading:
-      "The normal task throughout the day and default category of the task.Fly tasks are basic tasks like studying,shower etc.",
-  },
-  {
-    img: "/todo/bee.png",
-    heading: "Bee Task",
-    subHeading:
-      "The Important tasks you need to do not as important and hard as frog  task but important",
-  },
 ];
 
 export const HeroContent = [

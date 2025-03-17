@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.4",
     "@mui/material": "^6.4.4",
+    "@mui/x-charts": "^7.27.1",
     "@mui/x-date-pickers": "^7.27.1",
     "dayjs": "^1.11.13",
     "firebase": "^11.3.1",

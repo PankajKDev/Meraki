@@ -14,6 +14,7 @@ function UserSync() {
         fullName: user.fullName,
         pomodoro: 0,
         tasksCompleted: 0,
+        notesCreated: 0,
         createdAt: new Date(),
       };
       async function addUser() {

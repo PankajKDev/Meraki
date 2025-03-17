@@ -1,9 +1,9 @@
 import { Grid2 as Grid } from "@mui/material";
 import CreateCard from "./CreateCard";
-import MappableNote from "./MappableNote";
+import NoteCard from "./NoteCard";
 import useNoteUtil from "../../utils/useNoteUtil";
 
-function NotesMapper() {
+function MappedNotes() {
   const { data, deleteNote, pinNote } = useNoteUtil();
   const sortedData = data.sort((a, b) => b.pinned - a.pinned);
   return (
@@ -15,7 +15,7 @@ function NotesMapper() {
       >
         <CreateCard />
         {sortedData.map((item) => (
-          <MappableNote
+          <NoteCard
             key={item.id}
             id={item.id}
             moodRating={item.mood_rating}
@@ -32,4 +32,4 @@ function NotesMapper() {
   );
 }
 
-export default NotesMapper;
+export default MappedNotes;

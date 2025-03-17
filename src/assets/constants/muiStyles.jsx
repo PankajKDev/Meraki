@@ -1,6 +1,6 @@
 //page container
 export const pageContainer = {
-  height: "100%",
+  height: "100dvh",
   display: "flex",
   alignItems: "center",
   flexDirection: "column",

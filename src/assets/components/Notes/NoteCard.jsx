@@ -5,7 +5,7 @@ import NoteIcon from "./NoteIcon";
 import ReadMoreModal from "./ReadMoreModal";
 import PropTypes from "prop-types";
 
-function MappableNote({
+function NoteCard({
   moodRating,
   content,
   date,
@@ -18,6 +18,7 @@ function MappableNote({
   function handleOpen() {
     setOpen(!open);
   }
+  const taskDate = date.toDate();
   return (
     <>
       <Grid size={{ xs: 10, sm: 8, md: 4 }}>
@@ -29,7 +30,7 @@ function MappableNote({
         >
           <CardContent>
             <Typography variant="body1" sx={{ textAlign: "right" }}>
-              Date : {dayjs().format("DD-MM-YYYY").toString()}
+              Date : {dayjs(taskDate).format("DD-MM-YYYY").toString()}
             </Typography>
             <Typography
               variant="body1"
@@ -49,12 +50,11 @@ function MappableNote({
                 height: "150px",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
-                WebkitLineClamp: 7, // Number of lines to display
+                WebkitLineClamp: 7,
                 WebkitBoxOrient: "vertical",
                 cursor: "pointer",
               }}
             >
-              {/* i mean this typography */}
               {content}
             </Typography>
             <NoteIcon
@@ -78,9 +78,9 @@ function MappableNote({
   );
 }
 
-export default MappableNote;
+export default NoteCard;
 
-MappableNote.propTypes = {
+NoteCard.propTypes = {
   moodRating: PropTypes.number,
   date: PropTypes.object,
   content: PropTypes.string,
