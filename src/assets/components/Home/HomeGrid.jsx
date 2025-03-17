@@ -13,6 +13,8 @@ function HomeGrid({ userData }) {
       return "/icons/joy.png";
     } else if (averageMood > 3.5) {
       return "/icons/smile.png";
+    } else {
+      return "/icons/joy.png";
     }
   }
 
@@ -20,17 +22,17 @@ function HomeGrid({ userData }) {
     {
       id: 1,
       imgUrl: "/icons/todo.png",
-      text: `${userData?.tasksCompleted} tasks completed`,
+      text: `${userData?.tasksCompleted || 0} tasks completed`,
     },
     {
       id: 2,
       imgUrl: "/icons/tomato.png",
-      text: `${userData?.pomodoro} pomodoro completed`,
+      text: `${userData?.pomodoro || 0} pomodoro completed`,
     },
     {
       id: 3,
       imgUrl: "/icons/note.png",
-      text: `${userData?.pomodoro} notes created`,
+      text: `${userData?.pomodoro || 0} notes created`,
     },
     {
       id: 4,
